@@ -12,22 +12,18 @@ RUN     DEBIAN_FRONTEND=noninteractive apt-get update \
             ca-certificates \
             curl \
             dbus-x11 \
-            midori \
-            nano \
             openssh-server \
             sudo \
             supervisor \
             task-xfce-desktop \
-            terminator \
             tigervnc-standalone-server \
-            unzip \
-            vim \
-            wget \
-            xorgxrdp \
             xrdp \
     &&  apt-get clean -y && apt-get clean -y && apt-get autoclean -y && rm -r /var/lib/apt/lists/*
     
-ENV FRX_XRDP_CERT_SUBJ='/C=FX/ST=None/L=None/O=None/OU=None/CN=localhost' \
+ENV FRX_APTGET_DISTUPGRADE= \
+    FRX_APTGET_INSTALL= \
+    FRX_START_CMD= \
+    FRX_XRDP_CERT_SUBJ='/C=FX/ST=None/L=None/O=None/OU=None/CN=localhost' \
     FRX_XRDP_USER_NAME=debian \
     FRX_XRDP_USER_PASSWORD=ChangeMe \
     FRX_XRDP_USER_SUDO=1 \

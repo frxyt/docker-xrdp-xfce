@@ -23,6 +23,9 @@ These environment variables can be overriden to change the default behavior of t
 
 | Name                     | Default value                                       | Example                                                     | Description
 | :------------------------| :-------------------------------------------------- | :----------------------------------------------- | :----------
+| `FRX_APTGET_DISTUPGRADE` | ` ` *(Empty)*                                       | `1`                                              | Update installed packages
+| `FRX_APTGET_INSTALL`     | ` ` *(Empty)*                                       | `midori terminator`                              | Packages to install with `apt-get`
+| `FRX_START_CMD`          | ` ` *(Empty)*                                       | `echo 'Hello World !'`                           | Command to run before starting services
 | `FRX_XRDP_CERT_SUBJ`     | `/C=FX/ST=None/L=None/O=None/OU=None/CN=localhost`  | `/C=FR/ST=67/L=SXB/O=FRXYT/OU=IT/CN=xrdp.frx.yt` | XRDP certificate subject
 | `FRX_XRDP_USER_NAME`     | `debian`                                            | `john.doe`                                       | Default user name
 | `FRX_XRDP_USER_PASSWORD` | `ChangeMe`                                          | `myNOTsecretPassword`                            | Default user password
@@ -39,6 +42,7 @@ To run this image, you can use this sample `docker-compose.yml` file:
 php:
   image: frxyt/xrdp-xfce:latest
   environment:
+    - FRX_APTGET_INSTALL=midori terminator
     - FRX_XRDP_USER_NAME=john.doe
     - FRX_XRDP_USER_PASSWORD=myNOTsecretPassword
   ports:
