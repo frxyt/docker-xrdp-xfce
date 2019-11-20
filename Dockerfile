@@ -12,3 +12,5 @@ RUN     DEBIAN_FRONTEND=noninteractive apt-get update \
             task-xfce-desktop \
     &&  apt-get clean -y && apt-get clean -y && apt-get autoclean -y && rm -r /var/lib/apt/lists/* \
     &&  echo "startxfce4" > /etc/skel/.xsession
+
+COPY Dockerfile LICENSE README.md /frx/xfce/
