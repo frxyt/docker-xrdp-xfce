@@ -17,22 +17,7 @@ This image packages XFCE with XRDP and VNC.
 
 ## Usage
 
-### Configurable environment variables
-
-These environment variables can be overriden to change the default behavior of the image and adapt it to your needs:
-
-| Name                     | Default value                                       | Example                                                     | Description
-| :------------------------| :-------------------------------------------------- | :----------------------------------------------- | :----------
-| `FRX_APTGET_DISTUPGRADE` | ` ` *(Empty)*                                       | `1`                                              | Update installed packages
-| `FRX_APTGET_INSTALL`     | ` ` *(Empty)*                                       | `midori terminator`                              | Packages to install with `apt-get`
-| `FRX_START_CMD`          | ` ` *(Empty)*                                       | `echo 'Hello World !'`                           | Command to run before starting services
-| `FRX_XRDP_CERT_SUBJ`     | `/C=FX/ST=None/L=None/O=None/OU=None/CN=localhost`  | `/C=FR/ST=67/L=SXB/O=FRXYT/OU=IT/CN=xrdp.frx.yt` | XRDP certificate subject
-| `FRX_XRDP_USER_NAME`     | `debian`                                            | `john.doe`                                       | Default user name
-| `FRX_XRDP_USER_PASSWORD` | `ChangeMe`                                          | `myNOTsecretPassword`                            | Default user password
-| `FRX_XRDP_USER_SUDO`     | `1`                                                 | `0`                                              | Add default user to `sudoers` if set to `1`
-| `FRX_XRDP_USER_GID`      | `1000`                                              | `33`                                             | Default user ID (UID)
-| `FRX_XRDP_USER_UID`      | `1000`                                              | `33`                                             | Default user group ID (GID)
-| `TZ`                     | `Europe/Paris`                                      | `Etc/UTC`                                        | Default time zone
+Please see usage & configuration details from base image: [`frxyt/xrdp`](https://github.com/frxyt/docker-xrdp)
 
 ### Example
 
